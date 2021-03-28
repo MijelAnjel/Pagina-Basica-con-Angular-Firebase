@@ -1,0 +1,31 @@
+<section class="container">
+  <h5 class="text-primary h5-responsive">1. Selecciona un Archivo para subir.</h5> <hr> <br>
+  <form [formGroup]="archivoForm" (ngSubmit)="subirArchivo()">
+    <div class="file has-name is-boxed">
+
+      <label class="file-label">
+        <input class="file-input" type="file" formControlName="archivo" (change)="cambioArchivo($event)">
+        <span class="file-cta">
+          <span class="file-label">
+            Seleccione un archivo…
+          </span>
+        </span>
+        <span class="file-name">
+          {{ mensajeArchivo }}
+        </span>
+      </label>
+
+    </div>
+    <hr>
+    <progress *ngIf="porcentaje > 0 && porcentaje <100" class="progress is-large is-success" value="{{porcentaje}}" max="100">{{porcentaje}}%</progress> <br>
+    <h5 class="text-primary h5-responsive">2.Luego de seleccionar un Archivo. Presione el botón rojo para subir el archivo (Si es una imágen obtendrá una previsualización).</h5>
+    <button  class="btn btn-danger" [ngClass]="{'button': true, 'is-success': true, 'is-large': true, 'is-loading': porcentaje > 0 && porcentaje <100}"
+      [disabled]="!archivoForm.valid && (porcentaje > 0 && porcentaje < 100)">SUBIR ARCHIVO Y PREVISUALIZAR</button>
+    <mat-card class="pre col-12"><img class="img-fluid img-pre" src="{{URLPublica}}" alt=""></mat-card>
+
+    <h6>*Luego de verificar que la imágen se muestra correctamente. Presione el botón verde para copiar la URL de la imágen.</h6>
+    <button class="col-12" class="btn-success" (click)="copyInputMessage(userinput)" value="click to copy" > <br>
+      <i class="material-icons">filter_none</i>&nbsp; PULSE AQUÍ PARA COPIAR URL</button><br> <hr>
+      <input class="col-8" type="text" value="{{URLPublica}}" #userinput name="URLPublica"> <br>
+  </form><br>
+</section>

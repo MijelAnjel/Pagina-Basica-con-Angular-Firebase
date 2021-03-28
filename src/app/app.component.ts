@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'astral';
+
+  onDeactivate() {
+    document.body.scrollTop = 0;
+  }
 }

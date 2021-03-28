@@ -1,0 +1,146 @@
+<section *ngFor="let i of inicio$ | async" class="" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+    <img style="background-position: center; background-repeat: no-repeat; background-size: cover; width: 100%; height: 100%;" src="{{i.texto26}}" alt="">
+
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-end">
+      <div class="col-md-9 ftco-animate pb-5">
+        <p class="breadcrumbs text-dark mb-2"><span class="mr-2"><a [routerLink]="[('/inicio')]">Inicio <i class="ion-ios-arrow-forward"></i></a></span> <span>{{i.texto28}}  <i class="ion-ios-arrow-forward"></i></span></p>
+        <h1 class="mb-0 bread wow fadeInLeft" data-wow-delay="0.2s"> {{i.texto27}} </h1>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</section>
+
+
+<!--SECCION SERVICIOS II -->
+<section *ngFor="let i of inicio$ | async">
+  <div class="row justify-content-center pt-5 mt-3">
+    <div class="col-md-7 heading-section text-center ftco-animate">
+      <h2>{{i.texto29}}  </h2>
+    </div>
+  </div>
+  <div class="container py-5 my-5">
+    <section class="p-md-3 mx-md-5 wow fadeInUp">
+      <div class="row mb-5 pb-5 d-flex align-items-center">
+        <div class="col-lg-6 col-md-6">
+          <div class="card">
+            <div class="card-header white">
+              <h5 class="font-weight-bold mb-0">{{i.texto30}}</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text mb-2">{{i.texto31}}
+              </p>
+              <p class="card-text">{{i.texto32}}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="view overlay rounded z-depth-1">
+            <img src="{{i.texto33}}" class="img-fluid"
+              alt="Sample project image" />
+            <a href="#">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-5 pb-5 d-flex align-items-center justify-content-end">
+        <div class="col-md-6 col-lg-4">
+          <div class="view overlay rounded z-depth-1">
+            <img src="{{i.texto37}}" class="img-fluid"
+              alt="Sample project image" />
+            <a href="#">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="card">
+            <div class="card-header white">
+              <h5 class="font-weight-bold mb-0"> {{i.texto34}}</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text mb-2">{{i.texto35}}</p>
+              <p class="card-text">{{i.texto36}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex pb-5 align-items-center">
+        <div class="col-lg-6 col-md-6">
+          <div class="card">
+            <div class="card-header white">
+              <h5 class="font-weight-bold mb-0">{{i.texto38}}</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text mb-2">{{i.texto39}}</p>
+              <p class="card-text">{{i.texto40}}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="view overlay rounded z-depth-1">
+            <img src="{{i.texto41}}" class="img-fluid "
+              alt="Sample project image" />
+            <a href="#">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</section>
+
+<section *ngFor="let i of inicio$ | async" class="wow fadeInUp" data-wow-delay="0.2s">
+  <div class="container pt-5 my-5 z-depth-1">
+    <section class="p-md-3 mx-md-5 text-lg-left">
+
+      <div class="row d-flex justify-content-center">
+        <h4 class="font-weight-bold pb-4"> {{i.texto42}}</h4>
+      </div>
+
+      <div class="row text-center d-flex justify-content-center mt-4">
+
+        <div class="col-lg-4 col-md-6 mb-5">
+          <img src="{{i.texto43}}" width="90" class="far fa-chart-bar indigo-text fa-5x img-fluid avatar mb-4">
+          <h5 class="font-weight-bold mb-4">{{i.texto44}}</h5>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-5">
+          <img src="{{i.texto45}}" width="90" class="far fa-chart-bar indigo-text fa-5x img-fluid avatar mb-4">
+          <h5 class="font-weight-bold mb-4">{{i.texto46}}</h5>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-5">
+          <img src="{{i.texto47}}" width="160" height="120" class="far fa-chart-bar indigo-text fa-5x img-fluid avatar mb-4">
+          <h5 class="font-weight-bold mb-4">{{i.texto48}}</h5>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-5">
+          <img src="{{i.texto49}}" width="90" class="far fa-chart-bar indigo-text fa-5x img-fluid avatar mb-4">
+          <h5 class="font-weight-bold mb-4">{{i.texto50}}</h5>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-5">
+          <img src="{{i.texto51}}" width="180" height="190"  class="far fa-chart-bar indigo-text fa-5x img-fluid avatar mb-4">
+          <h5 class="font-weight-bold mb-4">{{i.texto52}}</h5>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-5">
+          <img src="{{i.texto53}}" width="90" class="far fa-chart-bar indigo-text fa-5x img-fluid avatar mb-4">
+          <h5 class="font-weight-bold mb-4">{{i.texto54}}</h5>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</section>
+

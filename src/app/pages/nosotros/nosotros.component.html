@@ -1,0 +1,90 @@
+<section *ngFor="let i of inicio$ | async" class="" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+    <img style="background-position: center; background-repeat: no-repeat; background-size: cover; width: 100%; height: 100%;" src="{{i.texto20}}" alt="">
+
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-end">
+      <div class="col-md-9 ftco-animate pb-5">
+        <p class="breadcrumbs mb-2"><span class="mr-2"><a [routerLink]="[('/inicio')]">Inicio <i class="ion-ios-arrow-forward"></i></a></span> <span>{{i.texto21}}  <i class="ion-ios-arrow-forward"></i></span></p>
+        <h1 class="mb-0 bread wow fadeInLeft" data-wow-delay="0.2s"> {{i.texto25}} </h1>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</section>
+
+<section *ngFor="let i of inicio$ | async" >
+  <div class="container z-depth-1 my-5">
+    <section class="mx-md-5 text-center text-lg-left">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-12">
+          <div class="row justify-content-center ">
+            <div class="col-md-7 heading-section text-center ftco-animate mt-4">
+              <h2 class="purple"> {{i.texto}}</h2>
+              <hr class="purple" style="border: 1px solid rgb(163, 2, 163);">
+              <span class="subheading"></span>
+            </div>
+          </div>
+          <div class="row p-5">
+            <div class="col-lg-8 d-flex flex-column justify-content-between">
+              <p class="text-muted pt-5 mb-4">
+                {{i.texto1}} <br>  <br>
+                {{i.texto2}}
+
+              </p>
+              <div>
+                <p class="font-weight-bold purple lead mb-1"><strong>{{i.texto3}}</strong></p>
+                <p class="font-weight-bold text-muted purple">{{i.texto4}}</p>
+              </div>
+            </div>
+            <div class="col-lg-4 d-flex mb-2 align-items-center">
+                <div class="avatar mx-4 w-100 white d-flex justify-content-center align-items-center popup-vimeo">
+                  <img  src="assets/images/fotopruebapresentacion.jpg" class="rounded-circle img-fluid z-depth-1 mb-5" alt="woman avatar">
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section *ngFor="let i of inicio$ | async">
+
+  <div class="mt-3 mb-5">
+
+    <section style="background-image: url('assets/images/videofondo.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+      <!-- Modal -->
+      <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+              <iframe id="player" class="embed-responsive-item" src="https://youtu.be/ + {{i.texto22}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="py-5">
+
+        <div class="container text-center my-2">
+          <div class="pb-5">
+            <h3 class="font-weight-bold text-center text-white white-text pt-1"> {{i.texto23}} </h3>
+          <hr class="w-header hr-light text-white my-2">
+          <p class="lead text-center text-white white-text pb-2 mb-5"> {{i.texto24}} </p>
+
+          <a id="play" class=" btn-light btn-lg text-white mt-5 bg-secondary" data-toggle="modal" data-target="#modal1"><i class="fas fa-play"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</section>
+

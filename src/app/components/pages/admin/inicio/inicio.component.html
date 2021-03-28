@@ -1,0 +1,347 @@
+<section class="my-5 container z-depth-1-half">
+  <div class="row">
+
+
+  <h5 class="h5 h5-responsive col-12">EDITA LA SECCIÓN DE TESTIMONIOS</h5>
+
+
+  <div *ngFor="let i of blog$ |async | slice:0:1;" class="z-depth-1 p-3 mb-5 col-sm-4 text-center">
+
+        <mat-card class="">
+        <label>
+          <li>
+            <h5>Imagen 1:</h5>
+              <img src="{{i.timg1}}" class="img-fluid" alt="">
+          </li>
+        </label>
+
+      <div class="row mt-3">
+        <!-- <button class="ml-2 mr-5 mt-3" (click)="deleteProduct($event, i)"
+        class="btn btn-danger"><mat-icon>delete</mat-icon> Borrar</button> -->
+
+        <button (click)="editProduct($event, i)"
+        class="btn btn-secondary ml-4">
+          Editar
+        </button>
+      </div>
+
+
+        <div class="col-12" *ngIf="editing && editingProduct.id == i.id">
+          <form (ngSubmit)="updateProduct(product)" class="z-depth-1">
+
+            <h2>EDITAR IMAGEN:</h2>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label class="text-primary" for="inputCity">Título:</label>
+                <input name="texto1" [(ngModel)]="editingProduct.texto1" type="text" class="form-control">
+              </div>
+              <div class="form-group col-md-12">
+                <label class="text-primary col-12" for="inputCity">Subtitulo</label>
+                <input class="col-12" name="texto2" [(ngModel)]="editingProduct.texto2" type="text" cols="30" rows="10">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label class="text-primary" for="inputCity">Nombre:</label>
+                <input name="tname1" [(ngModel)]="editingProduct.tname1" type="text" class="form-control">
+              </div>
+              <div class="form-group col-md-12">
+                <label class="text-primary col-12" for="inputCity">IDENTIFICADOR</label>
+                <textarea class="col-12" name="testi1" [(ngModel)]="editingProduct.testi1" type="text" cols="30" rows="10"></textarea>
+              </div>
+                <div class="form-group col-md-12">
+                  <label class="text-primary" for="inputCity">imagen 1:</label>
+                  <input name="timg1" [(ngModel)]="editingProduct.timg1" type="text" class="form-control">
+                </div>
+            </div>
+
+
+
+<!--
+              <h2>EDITAR IMAGENES DE ACERCA DE MÍ:</h2>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label class="text-primary" for="inputCity">IDENTIFICADOR (NO EDITAR):</label>
+                  <input name="id" [(ngModel)]="editingProduct.id" type="text" class="form-control">
+                </div>
+                  <div class="form-group col-md-4">
+                    <label class="text-primary" for="inputCity">imagen 1:</label>
+                    <input name="ban4" [(ngModel)]="editingProduct.ban4" type="text" class="form-control">
+                  </div>
+                </div>
+
+
+                <h2>EDITAR IMAGEN DE PROCESO DE COACHING:</h2>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label class="text-primary" for="inputCity">IDENTIFICADOR (NO EDITAR):</label>
+                    <input name="id" [(ngModel)]="editingProduct.id" type="text" class="form-control">
+                  </div>
+                    <div class="form-group col-md-4">
+                      <label class="text-primary" for="inputCity">imagen 1:</label>
+                      <input name="ban5" [(ngModel)]="editingProduct.ban5" type="text" class="form-control">
+                    </div>
+                  </div>
+
+
+               <h2>EDITAR IMAGEN DE SERVICIOS:</h2>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label class="text-primary" for="inputCity">IDENTIFICADOR (NO EDITAR):</label>
+                    <input name="id" [(ngModel)]="editingProduct.id" type="text" class="form-control">
+                  </div>
+                    <div class="form-group col-md-4">
+                      <label class="text-primary" for="inputCity">imagen 1:</label>
+                      <input name="ban6" [(ngModel)]="editingProduct.ban6" type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label class="text-primary" for="inputCity">imagen 2:</label>
+                      <input name="ban7" [(ngModel)]="editingProduct.ban7" type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label class="text-primary" for="inputCity">imagen 3:</label>
+                      <input name="ban8" [(ngModel)]="editingProduct.ban8" type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label class="text-primary" for="inputCity">imagen 4:</label>
+                      <input name="ban9" [(ngModel)]="editingProduct.ban9" type="text" class="form-control">
+                    </div>
+                  </div> -->
+
+            <button class="btn btn-outline-info" type="submit">Actualizar datos</button>
+          </form>
+        </div>
+
+</mat-card>
+  </div>
+
+  <div *ngFor="let i of blog$ |async | slice:1:2;" class="z-depth-1 p-3 mb-5 col-sm-4 text-center">
+
+        <mat-card class="">
+        <label><li><h5>Imagen 2:</h5> <img src="{{i.timg2}}" class="img-fluid" alt=""></li></label>
+
+
+      <div class="row mt-3">
+        <!-- <button class="ml-2 mr-5 mt-3" (click)="deleteProduct($event, i)"
+        class="btn btn-danger"><mat-icon>delete</mat-icon> Borrar</button> -->
+
+        <button (click)="editProduct($event, i)"
+        class="btn btn-secondary ml-4">
+          Editar
+        </button>
+      </div>
+
+
+        <div class="col-12" *ngIf="editing && editingProduct.id == i.id">
+          <form (ngSubmit)="updateProduct(product)" class="z-depth-1">
+
+            <h2>EDITAR IMAGEN:</h2>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label class="text-primary" for="inputCity">Título:</label>
+                <input name="texto1" [(ngModel)]="editingProduct.texto1" type="text" class="form-control">
+              </div>
+              <div class="form-group col-md-12">
+                <label class="text-primary col-12" for="inputCity">Subtitulo</label>
+                <input class="col-12" name="texto2" [(ngModel)]="editingProduct.texto2" type="text" cols="30" rows="10">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label class="text-primary" for="inputCity">Nombre:</label>
+                <input name="tname1" [(ngModel)]="editingProduct.tname1" type="text" class="form-control">
+              </div>
+              <div class="form-group col-md-12">
+                <label class="text-primary col-12" for="inputCity">IDENTIFICADOR</label>
+                <textarea class="col-12" name="testi1" [(ngModel)]="editingProduct.testi1" type="text" cols="30" rows="10"></textarea>
+              </div>
+                <div class="form-group col-md-12">
+                  <label class="text-primary" for="inputCity">imagen 2</label>
+                  <input name="timg2" [(ngModel)]="editingProduct.timg2" type="text" class="form-control">
+                </div>
+            </div>
+
+
+            <button class="btn btn-outline-info" type="submit">Actualizar datos</button>
+          </form>
+        </div>
+
+</mat-card>
+  </div>
+
+  <div *ngFor="let i of blog$ |async | slice:2:3;" class="z-depth-1 p-3 mb-5 col-sm-4 text-center">
+
+      <mat-card class="">
+      <label><li><h5>Imagen 3:</h5> <img src="{{i.timg3}}" class="img-fluid" alt=""></li></label>
+
+
+    <div class="row mt-3">
+      <!-- <button class="ml-2 mr-5 mt-3" (click)="deleteProduct($event, i)"
+      class="btn btn-danger"><mat-icon>delete</mat-icon> Borrar</button> -->
+
+      <button (click)="editProduct($event, i)"
+      class="btn btn-secondary ml-4">
+        Editar
+      </button>
+    </div>
+
+
+      <div class="col-12" *ngIf="editing && editingProduct.id == i.id">
+        <form (ngSubmit)="updateProduct(product)" class="z-depth-1">
+
+          <h2>EDITAR IMAGEN:</h2>
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label class="text-primary" for="inputCity">Título:</label>
+              <input name="texto1" [(ngModel)]="editingProduct.texto1" type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-12">
+              <label class="text-primary col-12" for="inputCity">Subtitulo</label>
+              <input class="col-12" name="texto2" [(ngModel)]="editingProduct.texto2" type="text" cols="30" rows="10">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label class="text-primary" for="inputCity">Nombre:</label>
+              <input name="tname1" [(ngModel)]="editingProduct.tname1" type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-12">
+              <label class="text-primary col-12" for="inputCity">IDENTIFICADOR</label>
+              <textarea class="col-12" name="testi1" [(ngModel)]="editingProduct.testi1" type="text" cols="30" rows="10"></textarea>
+            </div>
+              <div class="form-group col-md-12">
+                <label class="text-primary" for="inputCity">imagen 2</label>
+                <input name="timg3" [(ngModel)]="editingProduct.timg3" type="text" class="form-control">
+              </div>
+          </div>
+
+
+          <button class="btn btn-outline-info" type="submit">Actualizar datos</button>
+        </form>
+      </div>
+
+</mat-card>
+  </div>
+
+  <div *ngFor="let i of blog$ |async | slice:3:4;" class="z-depth-1 p-3 mb-5 col-sm-4 text-center">
+
+      <mat-card class="">
+      <label><li><h5>Imagen 4:</h5> <img src="{{i.timg4}}" class="img-fluid" alt=""></li></label>
+
+
+    <div class="row mt-3">
+      <!-- <button class="ml-2 mr-5 mt-3" (click)="deleteProduct($event, i)"
+      class="btn btn-danger"><mat-icon>delete</mat-icon> Borrar</button> -->
+
+      <button (click)="editProduct($event, i)"
+      class="btn btn-secondary ml-4">
+        Editar
+      </button>
+    </div>
+
+
+      <div class="col-12" *ngIf="editing && editingProduct.id == i.id">
+        <form (ngSubmit)="updateProduct(product)" class="z-depth-1">
+
+          <h2>EDITAR IMAGEN:</h2>
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label class="text-primary" for="inputCity">Título:</label>
+              <input name="texto1" [(ngModel)]="editingProduct.texto1" type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-12">
+              <label class="text-primary col-12" for="inputCity">Subtitulo</label>
+              <input class="col-12" name="texto2" [(ngModel)]="editingProduct.texto2" type="text" cols="30" rows="10">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label class="text-primary" for="inputCity">Nombre:</label>
+              <input name="tname1" [(ngModel)]="editingProduct.tname1" type="text" class="form-control">
+            </div>
+            <div class="form-group col-md-12">
+              <label class="text-primary col-12" for="inputCity">IDENTIFICADOR</label>
+              <textarea class="col-12" name="testi1" [(ngModel)]="editingProduct.testi1" type="text" cols="30" rows="10"></textarea>
+            </div>
+              <div class="form-group col-md-12">
+                <label class="text-primary" for="inputCity">imagen 4</label>
+                <input name="timg4" [(ngModel)]="editingProduct.timg4" type="text" class="form-control">
+              </div>
+          </div>
+
+
+          <button class="btn btn-outline-info" type="submit">Actualizar datos</button>
+        </form>
+      </div>
+
+ </mat-card>
+  </div>
+
+  <div *ngFor="let i of blog$ |async | slice:4:5;" class="z-depth-1 p-3 mb-5 col-sm-4 text-center">
+
+    <mat-card class="">
+    <label><li><h5>Imagen 5:</h5> <img src="{{i.timg5}}" class="img-fluid" alt=""></li></label>
+
+
+  <div class="row mt-3">
+    <!-- <button class="ml-2 mr-5 mt-3" (click)="deleteProduct($event, i)"
+    class="btn btn-danger"><mat-icon>delete</mat-icon> Borrar</button> -->
+
+    <button (click)="editProduct($event, i)"
+    class="btn btn-secondary ml-4">
+      Editar
+    </button>
+  </div>
+
+
+    <div class="col-12" *ngIf="editing && editingProduct.id == i.id">
+      <form (ngSubmit)="updateProduct(product)" class="z-depth-1">
+
+        <h2>EDITAR IMAGEN:</h2>
+
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label class="text-primary" for="inputCity">Título:</label>
+            <input name="texto1" [(ngModel)]="editingProduct.texto1" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-12">
+            <label class="text-primary col-12" for="inputCity">Subtitulo</label>
+            <input class="col-12" name="texto2" [(ngModel)]="editingProduct.texto2" type="text" cols="30" rows="10">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label class="text-primary" for="inputCity">Nombre:</label>
+            <input name="tname1" [(ngModel)]="editingProduct.tname1" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-12">
+            <label class="text-primary col-12" for="inputCity">IDENTIFICADOR</label>
+            <textarea class="col-12" name="testi1" [(ngModel)]="editingProduct.testi1" type="text" cols="30" rows="10"></textarea>
+          </div>
+            <div class="form-group col-md-12">
+              <label class="text-primary" for="inputCity">imagen 5</label>
+              <input name="timg5" [(ngModel)]="editingProduct.timg5" type="text" class="form-control">
+            </div>
+        </div>
+
+
+        <button class="btn btn-outline-info" type="submit">Actualizar datos</button>
+      </form>
+    </div>
+
+</mat-card>
+  </div>
+
+
+  </div>
+
+</section>

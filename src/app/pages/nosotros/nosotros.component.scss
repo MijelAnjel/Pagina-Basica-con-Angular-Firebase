@@ -1,0 +1,52 @@
+.tsize {
+  font-size: 14px;
+}
+@media only screen and (max-width: 799px) {
+  .tsize {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .tsize {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .tsize2 {
+    font-size: 12px;
+  }
+}
+.mat-c{
+  border-radius: 38px 10px 10px 39px;
+  -moz-border-radius: 38px 10px 10px 39px;
+  -webkit-border-radius: 38px 10px 10px 39px;
+  border: 0px solid #000000;
+  -webkit-box-shadow: 17px 15px 19px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 17px 15px 19px -8px rgba(0,0,0,0.75);
+  box-shadow: 17px 15px 19px -8px rgba(0,0,0,0.75);
+}
+
+@media only screen and (max-width: 1024px) {
+  .mat-c {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .qimg {
+    height: 30% !important;
+    width: 30% !important;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .tsizeh4 {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .qsectionsize {
+    height: 750px;
+  }
+}

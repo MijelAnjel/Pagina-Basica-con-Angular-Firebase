@@ -1,0 +1,553 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a routerLink="/admin/inicio" class="navbar-brand text-white mr-5" >PANEL DE ADMINISTRACIÓN</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <!-- <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+        <a routerLink="banner" class="nav-link text-light" >
+          <i class="fab fa-houzz mr-2"></i>
+          Editar Imagenes de Banner
+        </a>
+      </li>
+
+
+    </ul> -->
+
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a routerLink="/inicio" class="nav-link text-white" >
+          Volver a Star Coaching
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a><!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
+            <i class="fas fa-file-archive fa-2x text-white mr-2"></i>Subir Archivo
+          </button>
+        </a>
+
+        <a [routerLink]="[('/mensajesadminmacamodulekey')]">
+          <button  type="button" class="btn btn-primary">
+            <i class="fas fa-envelope fa-2x text-white mr-2"></i>MENSAJES
+          </button>
+        </a><!---->
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!--MODAL IMAGEN-->
+<section>
+  <!-- Modal -->
+  <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sube tu Imagen, Vídeo o Documento</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <app-imagenes></app-imagenes>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-light">
+  <app-principal class="container bg-light"></app-principal>
+</section>
+
+<section class="bg-light">
+  <app-inicio class="container bg-light"></app-inicio>
+</section>
+
+<section class="container bg-light mt-5">
+  <h5>BLOG:</h5>
+
+  <form (ngSubmit)="addProduct()">
+    <button type="submit" class="btn btn-primary">Crear Nuevo Artículo del Blog</button>
+  </form>
+
+</section>
+
+<section class="my-5 container bg-light z-depth-1">
+  <div class="row">
+    <h5 class="h2 h2-responsive">Edita o Borra los Artículos</h5>
+
+      <div *ngFor="let e of posts$ |async" class="z-depth-1 col-md-12">
+        <mat-card class="">
+          <label><li><h5>Título del Artículo</h5> {{e.tituloPost}}</li></label> <br>
+          <label><li><h5>Identificación del artículo (ID):</h5> {{e.id}}</li></label>
+        </mat-card>
+        <div class="row my-5 pb-5">
+          <button class="my-5 mr-4 pr-4" (click)="deleteProduct($event, e)"
+          class="btn btn-danger"><mat-icon>delete</mat-icon> Borrar</button>
+
+          <button (click)="editProduct($event, e)"
+          class="btn btn-secondary"> <mat-icon class="align-items-center justify-content-center align-content-center">assignment</mat-icon>
+            Editar
+          </button>
+        </div>
+
+          <div class="col-xl-12 z-depth-1" *ngIf="editing && editingProduct.id == e.id">
+
+            <form (ngSubmit)="updateProduct(product)" class="container z-depth-1">
+              <h2>Agregar Nueva Post de Blog:</h2>
+
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label class="text-primary" for="inputCity">Nombre del Artículo:</label>
+                  <input name="id" [(ngModel)]="editingProduct.id"  type="text" class="form-control">
+                </div>
+              </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label class="text-primary" for="inputCity">Titulo Banner:</label>
+                    <textarea name="texto2" class="col-12" [(ngModel)]="editingProduct.texto2" type="text" > </textarea>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="text-primary" for="inputCity">Imagen Banner:</label>
+                    <textarea name="texto1" class="col-12" [(ngModel)]="editingProduct.texto1" type="text" > </textarea>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label class="text-primary" for="inputCity">SubtTitulo Banner:</label>
+                    <textarea name="texto3" class="col-12" [(ngModel)]="editingProduct.texto3" type="text" > </textarea>
+                  </div>
+                    <div class="form-group col-md-6">
+                      <label class="text-primary" for="inputCity">Titulo Artículo:</label>
+                      <textarea name="tituloPost" class="col-12" [(ngModel)]="editingProduct.tituloPost" type="text" > </textarea>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label class="text-primary" for="inputCity">Breve Descripción Portada</label>
+                      <textarea name="descripcionbreve" class="col-12" [(ngModel)]="editingProduct.descripcionbreve" type="text" ></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label class="text-primary" for="inputAddress2">Párrafo 1</label>
+                      <textarea name="parr1" class="col-12" [(ngModel)]="editingProduct.parr1" type="text" cols="30" rows="2" placeholder="Primer párrafo"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label class="text-primary" for="inputAddress2">Párrafo 2</label>
+                      <textarea name="parr2" class="col-12" [(ngModel)]="editingProduct.parr2" type="text"  cols="30" rows="2" placeholder="Segundo párrafo."></textarea>
+                  </div>
+                    <div class="form-group col-md-12">
+                      <label class="text-primary" for="inputCity">Titulo 2</label>
+                      <textarea name="titulo2" class="col-12" [(ngModel)]="editingProduct.titulo2" type="text" cols="30" rows="2" ></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label class="text-primary" for="inputCity">Párrafo 3</label>
+                      <textarea class="col-12" name="parr3" [(ngModel)]="editingProduct.parr3" type="text" cols="30" rows="2"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label class="text-primary" for="inputCity">Párrafo 4:</label>
+                      <textarea name="parr4" class="col-12" [(ngModel)]="editingProduct.parr4" type="text" cols="30" rows="2"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label class="text-primary" for="inputCity">Párrafo 5: </label>
+                      <textarea name="parr5" [(ngModel)]="editingProduct.parr5" type="text" cols="30" rows="2" class="col-12"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label class="text-primary" for="inputCity">Párrafo 6: </label>
+                      <textarea name="parr7" [(ngModel)]="editingProduct.parr7" type="text" cols="30" rows="2" class="col-12"></textarea>
+                    </div>
+
+
+
+                  </div>
+
+                <!--DESCRIPCIONES-->
+                <div class="form-group">
+                  <label class="text-primary" for="inputZip">Titulo 3:</label>
+                  <input name="titulo3" [(ngModel)]="editingProduct.titulo3"  type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label class="text-primary" for="inputAddress"> Titulo 4</label>
+                  <input name="titulo4" [(ngModel)]="editingProduct.titulo4" type="text" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label class="text-primary" for="inputAddress2">Titulo 5</label>
+                  <input name="titulo5" [(ngModel)]="editingProduct.titulo5" type="text" class="form-control" placeholder="">
+                </div>
+                <!-- <div class="form-group">
+                  <label class="text-primary" for="inputAddress2">Párrafo 1</label>
+                  <input name="parr1" [(ngModel)]="editingProduct.parr1" type="text" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label class="text-primary" for="inputAddress2">Párrafo 2</label>
+                    <input name="parr2" [(ngModel)]="editingProduct.parr2" type="text" class="form-control" placeholder="">
+                </div> -->
+
+
+                <!--
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                      <label class="text-primary" for="inputCity">Párrafo 3</label>
+                      <input name="parr3" [(ngModel)]="editingProduct.parr3" type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label class="text-primary" for="inputCity">Párrafo 4:</label>
+                      <input name="parr4" [(ngModel)]="editingProduct.parr4" type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label class="text-primary" for="inputCity">Párrafo 5: </label>
+                      <input name="parr5" [(ngModel)]="editingProduct.parr5" type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label class="text-primary" for="inputZip">Párrafo 6 :</label>
+                      <input name="parr6" [(ngModel)]="editingProduct.parr6" type="text" class="form-control">
+                    </div>
+                  </div>
+-->
+
+                  <div class="form-row">
+                    <div class="form-group col-md-3">
+                      <label class="text-primary" for="inputCity">Fecha:</label>
+                      <input name="fecha" [(ngModel)]="editingProduct.fecha" type="text" class="form-control" placeholder="Máx 4-5 personas">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label class="text-primary" for="inputCity">Autor(a):</label>
+                      <input name="autor" [(ngModel)]="editingProduct.autor" type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label class="text-primary" for="inputCity">Temática del Post: </label>
+                      <input name="tema" [(ngModel)]="editingProduct.tema" type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label class="text-primary"  for="inputZip">Descripción de autora:</label>
+                      <input name="descripcionautor" [(ngModel)]="editingProduct.descripcionautor" type="text" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group col-md-3">
+                      <label class="text-primary" for="inputCity">Imagen Principal (Cuadro Portada):</label>
+                      <input name="img1" [(ngModel)]="editingProduct.img1" type="text" class="form-control" placeholder="Pegar URL de la imagen aquí">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label class="text-primary" for="inputCity">Imagen 2:</label>
+                      <input name="img2" [(ngModel)]="editingProduct.img2" type="text" class="form-control" placeholder="Pegar URL de la imagen aquí">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label class="text-primary" for="inputCity">Imagen 3 </label>
+                      <input name="img3" [(ngModel)]="editingProduct.img3" type="text" class="form-control" placeholder="Pegar URL de la imagen aquí">
+                    </div>
+                    <div class="form-group col-md-3">
+                      <label class="text-primary"  for="inputZip">Imagen 4 :</label>
+                      <input name="img4" [(ngModel)]="editingProduct.img4" type="text" class="form-control" placeholder="Pegar URL de la imagen aquí">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label class="text-primary"  for="inputZip">Imagen 4 :</label>
+                      <input name="img5" [(ngModel)]="editingProduct.img5" type="text" class="form-control" placeholder="Pegar URL de la imagen aquí">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label class="text-primary"  for="inputZip">Imagen 5 :</label>
+                      <input name="img6" [(ngModel)]="editingProduct.img6" type="text" class="form-control" placeholder="Pegar URL de la imagen aquí">
+                    </div>
+                  </div>
+
+                <button type="submit" class="btn btn-primary">Actualizar Artículo de Blog</button>
+              </form>
+
+            <!--
+            <form (ngSubmit)="updateProduct(product)" class="z-depth-1">
+
+              <h5>EDICIÓN DE ITEMS</h5> <br>
+
+              <div class="form-row">
+                <div class="form-group-col-md-3">
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>img1:</mat-label>
+                    <input  type="text" name="img1" [(ngModel)]="editingProduct.img1" matInput>
+                  </mat-form-field>
+                </div>
+                <div class="form-group-col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>img2:</mat-label>
+                    <input type="text" name="img2" [(ngModel)]="editingProduct.img2" matInput>
+                  </mat-form-field>
+                </div>
+                <div class="form-group-col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>img3:</mat-label>
+                    <input type="text" name="img3" [(ngModel)]="editingProduct.img3" matInput>
+                  </mat-form-field>
+                </div>
+                <div class="form-group-col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>img4:</mat-label>
+                    <input type="text" name="img4" [(ngModel)]="editingProduct.img4" matInput>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>tituloPost:</mat-label>
+                    <input class="col-6" type="text" name="tituloPost" [(ngModel)]="editingProduct.tituloPost" matInput>
+                  </mat-form-field>
+                </div>
+                  <div class="form-group-col-md-6">
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>descripcionbreve:</mat-label>
+                    <input type="text" name="descripcionbreve" [(ngModel)]="editingProduct.descripcionbreve" matInput>
+                  </mat-form-field>
+                  </div>
+                </div>
+
+              <div class="form-row" >
+                <div class="form-group col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>titulo2:</mat-label>
+                    <input type="text" name="titulo2" [(ngModel)]="editingProduct.titulo2" matInput>
+                  </mat-form-field>
+                </div>
+                <div class="form-group col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>parr1:</mat-label>
+                    <input type="text" name="parr1" [(ngModel)]="editingProduct.parr1" matInput>
+                  </mat-form-field>
+                </div>
+                <div class="form-group col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>titulo3:</mat-label>
+                    <input type="text" name="titulo3" [(ngModel)]="editingProduct.titulo3" matInput>
+                  </mat-form-field>
+                </div>
+                <div class="form-group col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>parr2:</mat-label>
+                    <input type="text" name="parr2" [(ngModel)]="editingProduct.parr2" matInput>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>titulo4:</mat-label>
+                    <input type="text" name="titulo4" [(ngModel)]="editingProduct.titulo4" matInput>
+                  </mat-form-field></div>
+
+                  <div class="form-group col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>parr3:</mat-label>
+                    <input type="text" name="parr3" [(ngModel)]="editingProduct.parr3" matInput>
+                  </mat-form-field></div>
+
+                  <div class="form-group col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>titulo5:</mat-label>
+                    <input type="text" name="titulo5" [(ngModel)]="editingProduct.titulo5" matInput>
+                  </mat-form-field></div>
+
+                  <div class="form-group col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>parr4:</mat-label>
+                  <input matInput type="text" name="parr4" [(ngModel)]="editingProduct.parr4">
+                </mat-form-field></div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-3">
+              <mat-form-field appearance="fill">
+                <mat-label>parr5:</mat-label>
+                <input type="text" name="parr5" [(ngModel)]="editingProduct.parr5" matInput>
+              </mat-form-field></div>
+
+              <div class="form-group col-md-3">
+              <mat-form-field appearance="fill">
+                <mat-label>parr6:</mat-label>
+                <input type="text" name="parr6" [(ngModel)]="editingProduct.parr6" matInput>
+              </mat-form-field></div>
+
+              <div class="form-group col-md-3">
+              <mat-form-field appearance="fill">
+                <mat-label>parr7:</mat-label>
+                <input type="text" name="parr7" [(ngModel)]="editingProduct.parr7" matInput>
+              </mat-form-field></div>
+
+              <div class="form-group col-md-3">
+              <mat-form-field appearance="fill">
+                <label>Id: (SIRVE PARA ASIGNAR NOMBRE DE LA PÁGINA)</label>
+                <input type="text" name="id" [(ngModel)]="editingProduct.id"  matInput>
+              </mat-form-field></div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <mat-form-field appearance="fill">
+                    <mat-label>fecha:</mat-label>
+                  <input type="text" name="fecha" [(ngModel)]="editingProduct.fecha" matInput>
+                </mat-form-field></div>
+
+                <div class="form-group col-md-3">
+                <mat-form-field appearance="fill">
+                  <mat-label>autor:</mat-label>
+                  <input type="text" name="autor" [(ngModel)]="editingProduct.autor" matInput>
+                </mat-form-field></div>
+
+                <div class="form-group col-md-3">
+                <mat-form-field appearance="fill">
+                  <mat-label>tema:</mat-label>
+                  <input type="text" name="tema" [(ngModel)]="editingProduct.tema" matInput>
+                </mat-form-field></div>
+
+                <div class="form-group col-md-3">
+                <mat-form-field appearance="fill">
+                  <mat-label>descripcionautor:</mat-label>
+                  <input type="text" name="descripcionautor" [(ngModel)]="editingProduct.descripcionautor" matInput>
+                </mat-form-field></div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                <mat-form-field appearance="fill">
+                  <mat-label>alt1:</mat-label>
+                  <input type="text" name="alt1" [(ngModel)]="editingProduct.alt1" matInput>
+                </mat-form-field></div>
+
+                <div class="form-group col-md-6">
+                <mat-form-field appearance="fill">
+                  <label>alt2:</label>
+                  <input type="text" name="alt2" [(ngModel)]="editingProduct.alt3"  matInput>
+                </mat-form-field></div>
+              </div>
+
+
+              <button type="submit">Actualizar datos</button>
+            </form>
+-->
+
+          </div>
+
+        </div>
+      </div>
+
+</section>
+
+<!--
+<section class="mt-5 pt-5">
+
+  <form (ngSubmit)="addProduct()" class="container z-depth-1">
+    <h2>Agregar Nueva Post de Blog:</h2>
+
+      <div class="form-row">
+          <div class="form-group col-md-3">
+            <label class="text-primary" for="inputCity">Titulo del Post:</label>
+            <input name="tituloPost" [(ngModel)]="product.tituloPost" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-3">
+            <label class="text-primary" for="inputCity">Breve Descripción Portada</label>
+            <input name="descripcionbreve" [(ngModel)]="product.descripcionbreve" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-3">
+            <label class="text-primary" for="inputCity">Titulo 2</label>
+            <input name="titulo2" [(ngModel)]="product.titulo2" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-3">
+            <label class="text-primary" for="inputZip">Titulo 3:</label>
+            <input name="titulo3" [(ngModel)]="product.titulo3"  type="text" class="form-control">
+          </div>
+        </div>
+
+      <div class="form-group">
+        <label class="text-primary" for="inputAddress"> Titulo 4</label>
+        <input name="titulo4" [(ngModel)]="product.titulo4" type="text" class="form-control" placeholder="Esta descripción es de la vista previa, antes que el visitante vea mayores detalles.">
+      </div>
+      <div class="form-group">
+        <label class="text-primary" for="inputAddress2">Titulo 5</label>
+        <input name="titulo5" [(ngModel)]="product.titulo5" type="text" class="form-control" placeholder="Descripción interna, cuando el visitante está revisando los detalles.">
+      </div>
+      <div class="form-group">
+        <label class="text-primary" for="inputAddress2">Párrafo 1</label>
+        <input name="parr1" [(ngModel)]="product.parr1" type="text" class="form-control" placeholder="Descripción interna 2, cuando el visitante está revisando los detalles.">
+      </div>
+      <div class="form-group">
+          <label class="text-primary" for="inputAddress2">Párrafo 2</label>
+          <input name="parr2" [(ngModel)]="product.parr2" type="text" class="form-control" placeholder="Descripción interna 3, cuando el visitante está revisando los detalles.">
+      </div>
+
+
+      <div class="form-row">
+          <div class="form-group col-md-3">
+            <label class="text-primary" for="inputCity">Párrafo 3</label>
+            <input name="parr3" [(ngModel)]="product.parr3" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-3">
+            <label class="text-primary" for="inputCity">Párrafo 4:</label>
+            <input name="parr4" [(ngModel)]="product.parr4" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-3">
+            <label class="text-primary" for="inputCity">Párrafo 5: </label>
+            <input name="parr5" [(ngModel)]="product.parr5" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-3">
+            <label class="text-primary" for="inputZip">Párrafo 6 :</label>
+            <input name="parr6" [(ngModel)]="product.parr6" type="text" class="form-control">
+          </div>
+        </div>
+
+
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label class="text-primary" for="inputCity">Fecha:</label>
+            <input name="fecha" [(ngModel)]="product.fecha" type="text" class="form-control" placeholder="Máx 4-5 personas">
+          </div>
+          <div class="form-group col-md-3">
+            <label class="text-primary" for="inputCity">Autora:</label>
+            <input name="autor" [(ngModel)]="product.autor" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-3">
+            <label class="text-primary" for="inputCity">Temática del Post: </label>
+            <input name="tema" [(ngModel)]="product.tema" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-3">
+            <label class="text-primary"  for="inputZip">Descripción de autora:</label>
+            <input name="descripcionautor" [(ngModel)]="product.descripcionautor" type="text" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label class="text-primary" for="inputCity">Imagen Principal (Cuadro Portada):</label>
+            <input name="img" [(ngModel)]="product.img1" type="text" class="form-control" placeholder="Pegar URL de la imagen aquí">
+          </div>
+          <div class="form-group col-md-3">
+            <label class="text-primary" for="inputCity">Imagen 2:</label>
+            <input name="img1" [(ngModel)]="product.img2" type="text" class="form-control" placeholder="Pegar URL de la imagen aquí">
+          </div>
+          <div class="form-group col-md-3">
+            <label class="text-primary" for="inputCity">Imagen 3 </label>
+            <input name="img2" [(ngModel)]="product.img3" type="text" class="form-control" placeholder="Pegar URL de la imagen aquí">
+          </div>
+          <div class="form-group col-md-3">
+            <label class="text-primary"  for="inputZip">Imagen 4 :</label>
+            <input name="img3" [(ngModel)]="product.img4" type="text" class="form-control" placeholder="Pegar URL de la imagen aquí">
+          </div>
+        </div>
+
+      <button type="submit" class="btn btn-primary">Agregar Nuevo Post de Blog</button>
+    </form>
+
+    <ng-container class="">
+
+    </ng-container>
+</section>
+-->

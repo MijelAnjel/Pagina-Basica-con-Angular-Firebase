@@ -1,0 +1,749 @@
+/* Home Banner Area css
+============================================================================================ */
+  *{
+    border: 1px solid rgba(22, 22, 22, 0);
+  }
+.imgr{
+  height: 85vh !important;
+  width: 100% !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .imgr {
+    height: 100% !important;
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .qimg {
+    height: 30vh !important;
+    width: 50vh !important;
+    background-size: cover;
+  }
+}
+
+
+.img-fluid {
+  max-width: 100%;
+  margin-top: 10%;
+}
+
+.banner_area {
+  position: relative;
+  z-index: 0;
+  // min-height: 485px;
+  @media (max-width: 100%) {
+      min-height: 350px;
+  }
+  .banner_inner {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      min-height: 450px;
+      background: image('assets/images/amarillo.png') no-repeat right bottom;
+      // background-size: 90% 85%;
+      // width: 98%;
+      background-size: cover;
+      z-index: 1;
+      @media (max-width: 1199px) {
+          min-height: 350px;
+      }
+      // @media (max-width: 991px) {
+      //     background: $primary-color2;
+      //     width: 100%;
+      // }
+      .banner_content {
+          margin-left: 50px;
+          margin-top: 40px;
+          @media (max-width: 991px) {
+              margin-left: 0px;
+              // margin-top: 50px;
+          }
+          h2 {
+              color: #fff;
+              font-size: 45px;
+              font-family: initial;
+              margin-bottom: 10px;
+              text-transform: uppercase;
+              font-weight: 700;
+              @media (max-width: 991px) {
+                  font-size: 30px;
+              }
+          }
+          .page_link {
+              a {
+                  font-size: 12px;
+                  text-transform: uppercase;
+                  color: #fff;
+                  font-family: initial;
+                  padding-left: 20px;
+                  padding-right: 8px;
+                  position: relative;
+                  &:before {
+                      font-family: 'themify';
+                      speak-as: none;
+                      font-style: normal;
+                      font-weight: normal;
+                      font-variant: normal;
+                      text-transform: none;
+                      line-height: 1;
+                      -webkit-font-smoothing: antialiased;
+                      content: "\e649";
+                      position: absolute;
+                      right: -14px;
+                      top: 50%;
+                  }
+                  &:last-child {
+                      margin-right: 0px;
+                      &:before {
+                          display: none;
+                      }
+                  }
+              }
+          }
+      }
+  }
+}
+
+
+.textual {
+  position: absolute;
+  display: block;
+  top: 40%;
+  left: 75%;
+  line-height: 49px;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+}
+@media only screen and (max-width: 300px), only screen and (max-device-width: 699px)  {
+  .textual {
+    position: absolute !important;
+    display: block !important;
+    height: 100% !important;
+    top: 70% !important;
+    left: 73% !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    line-height: 20px !important;
+    font-family: monospace !important;
+    color: rgb(0, 0, 0) !important;
+    }
+}
+@media only screen and (max-width: 700px), only screen and (max-device-width: 1112px)  {
+  .textual {
+    position: absolute;
+    display: block;
+    height: 100%;
+    bottom: 20%;
+    left: 75%;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 30px;
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New';
+    }
+}
+.textu-color{
+color: rgb(31, 31, 31) !important;
+}
+
+
+.imagencen {
+  display: block !important;
+  margin: auto !important;
+  height: 580px !important;
+  width: 1000px !important;
+  position: absolute !important;
+  left: 12% !important;
+  top: 70% !important;
+}
+
+@media only screen and (max-width: 700px), only screen and (max-device-width: 900px)  {
+  .imagencen {
+    display: none !important;
+    }
+}
+@media only screen and (max-width: 700px), only screen and (max-device-width: 900px)  {
+  .imagencen {
+    display: none !important;
+    }
+}
+.responsivelogo {
+  width: 0px !important;
+  height: 0px !important;
+}
+@media only screen and (max-width: 0px), only screen and (max-device-width: 699px)  {
+  .responsivelogo {
+    background-image: url('/images/yellowb.jpg');
+    background-size: cover !important;
+    display: contents;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+
+.imagencendos {
+  height: 320px !important;
+  width: 200px !important;
+  position: absolute !important;
+  display: block;
+  left: 47% !important;
+  top: 52% !important;
+}
+
+@media only screen and (max-width: 300px), only screen and (max-device-width: 599px)  {
+  ngb-carousel img {
+    width: 100%;
+    height: 240px;
+    display: block;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+ngb-carousel img {
+  width: 100%;
+  height: 80vh;
+  display: block;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+  $image-size: 400px;
+.alinear {
+  background-color: rgb(233, 14, 14);
+  border: 1px solid rgb(204, 202, 202);
+  border-radius: 5px;
+  display: flex;
+  height: $image-size;
+  margin: 0 auto;
+  width: $image-size;
+}
+
+@media only screen and (max-width: 600px), only screen and (max-device-width: 1112px)  {
+  ngb-carousel img {
+    width: 100%;
+    height: 300px;
+    display: block;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    }
+}
+
+
+.textobandos {
+  position: absolute;
+  top: 32%;
+  left: 79%;
+  align-items: center;
+  font-size: 45px;
+  line-height: 40px;
+  color: rgb(0, 0, 0);
+  font-family: 'Courier New';
+}
+.textodos {
+  position: absolute;
+  top: 40%;
+  left: 78%;
+  font-size: 45px;
+  color: rgb(0, 0, 0);
+  font-family: 'Courier New', Courier, monospace;
+}
+@media only screen and (max-width: 300px), only screen and (max-device-width: 699px)  {
+  .textodos {
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+  }
+}
+@media only screen and (max-width: 700px), only screen and (max-device-width: 800px)  {
+  .textodos {
+    position: absolute;
+    top: 20%;
+    left: 73%;
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+    }
+}
+.textoban1 {
+  position: absolute;
+  top: 40%;
+  right: 80%;
+  font-size: 45px;
+  color: rgb(54, 53, 53);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+@media only screen and (max-width: 320px), only screen and (max-device-width: 699px)  {
+  .textoban1 {
+    position: absolute;
+    top: 45%;
+    right: 40%;
+    font-size: 19px;
+    color: rgb(54, 53, 53);
+  }
+}
+@media only screen and (max-width: 700px), only screen and (max-device-width: 900px)  {
+  .textoban1 {
+    position: absolute;
+    top: 45%;
+    right: 70%;
+    font-size: 15px;
+    color: rgb(54, 53, 53);
+    }
+}
+.textoban2 {
+  position: absolute;
+  top: 40%;
+  left: 80%;
+  font-size: 45px;
+  color: rgb(54, 53, 53);
+}
+.textoban3 {
+  position: absolute;
+  width: 100%;
+  height: 90px;
+  top: 5%;
+  left: 0%;
+  font-size: 35px;
+  font-family: sans-serif;
+  color: rgb(255, 255, 255);
+}
+.t3{
+  font-size: 25px;
+}
+@media only screen and (max-width: 300px), only screen and (max-device-width: 699px)  {
+  .textoban3 {
+    position: absolute !important;
+    width: 100% !important;
+    height: 30px !important;
+    top: 0% !important;
+    left: 0% !important;
+    font-size: 15px !important;
+    font-family: sans-serif !important;
+    color: rgb(255, 255, 255) !important;
+  }
+}
+@media only screen and (max-width: 700px), only screen and (max-device-width: 1112px)  {
+  .textoban3 {
+    position: absolute;
+    width: 100%;
+    height: 90px;
+    top: -5%;
+    left: 0%;
+    font-size: 2px;
+    font-family: sans-serif;
+    color: rgb(255, 255, 255);
+    }
+}
+@media only screen and (max-width: 357px), only screen and (max-device-width: 699px)  {
+  .textoban2 {
+    position: absolute;
+    top: 45%;
+    left: 70%;
+    font-size: 19px;
+    color: rgb(54, 53, 53);
+  }
+}
+@media only screen and (max-width: 700px), only screen and (max-device-width: 900px)  {
+  .textoban2 {
+    position: absolute;
+    top: 45%;
+    left: 70%;
+    font-size: 15px;
+    color: rgb(54, 53, 53);
+    }
+}
+
+.text-ban{
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  background-color: #e0e0e038;
+  padding: 100px;
+  border-radius: 20%;
+  font-family: monospace;
+}
+.text-bandos{
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  background-color: #e0e0e038;
+  padding: 100px;
+  border-radius: 20%;
+  font-family: monospace;
+}
+.text-back{
+  background-color: #e0e0e0d5;
+  color: #e0e0e0d5;
+  border-radius: 5px;
+}
+
+.logotrans {
+  position: absolute;
+  top: 72%;
+  left: 78%;
+  display: block;
+  margin: auto;
+}
+
+.textotres {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  vertical-align: middle;
+  margin: auto;
+  color: rgb(255, 255, 255);
+  font-weight: 30;
+  font-size: 25px;
+  font-family: sans-serif;
+}
+@media only screen and (max-width: 357px), only screen and (max-device-width: 699px)  {
+  .textotres {
+    position: absolute !important;
+    top: 36% !important;
+    left: 35% !important;
+    vertical-align: middle !important;
+    margin: auto !important;
+    color: rgb(255, 255, 255) !important;
+    font-weight: initial !important;
+    font-size: 17px !important;
+    font-family: 'Courier New' !important;
+  }
+}
+@media only screen and (max-width: 700px), only screen and (max-device-width: 900px)  {
+  .textotres {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    vertical-align: middle;
+    margin: auto;
+    color: rgb(255, 255, 255);
+    font-weight: initial;
+    font-size: 20px;
+    font-family: 'Courier New';
+  }
+}
+
+.butontres {
+  position: absolute;
+  top: 65%;
+  left: 70%;
+  vertical-align: middle;
+  margin: auto;
+  font-size: 20px;
+  font-family: 'Courier New';
+}
+@media only screen and (max-width: 300px), only screen and (max-device-width: 699px)  {
+  .butontres {
+    position: absolute !important;
+    top: 70% !important;
+    left: 50% !important;
+    vertical-align: middle !important;
+    margin: auto !important;
+    color: rgb(255, 255, 255) !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
+    font-family: 'Courier New' !important;
+  }
+}
+@media only screen and (max-width: 700px), only screen and (max-device-width: 1112px)  {
+  .butontres {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    vertical-align: middle;
+    margin: auto;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Courier New';
+  }
+}
+.textomega {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.leon {
+  position: absolute;
+  width: 370px;
+  height: 500px;
+  top: 10%;
+  left: 82%;
+}
+.leondos {
+  position: absolute;
+  width: 470px;
+  height: 600px;
+  top: 10%;
+  left: 89%;
+}
+.tadamujer {
+  position: absolute;
+  width: 480px;
+  height: 670px;
+  top: 40%;
+  right: 75%;
+}
+
+
+
+/*TESTIMONIOS*/
+.card {
+  margin: 0 auto;
+  background: #ffffff00;
+}
+.card .carousel-item {
+  height: 350px;
+  vertical-align: middle !important;
+}
+@media only screen and (max-width: 1001px), only screen and (max-device-width: 1100px)  {
+  .card {
+    height: 980px;
+    vertical-align: top !important;
+    }
+}
+@media only screen and (max-width: 300px), only screen and (max-device-width: 1000px)  {
+  .card {
+    height: 880px !important;
+    vertical-align: top !important;
+    }
+}
+@media only screen and (max-width: 700px), only screen and (max-device-width: 1000px)  {
+  .card .carousel-item {
+    height: 750px;
+    vertical-align: top !important;
+    }
+}
+@media only screen and (max-width: 0px), only screen and (max-device-width: 699px)  {
+  .card .carousel-item {
+    height: 700px !important;
+    vertical-align: top !important;
+  }
+}
+@media only screen and (max-width: 1001px), only screen and (max-device-width: 1100px)  {
+  .card .carousel-item {
+    height: 880px;
+    vertical-align: top !important;
+    }
+}
+@media only screen and (max-width: 700px), only screen and (max-device-width: 1000px)  {
+  .card .carousel-item {
+    height: 850px;
+    }
+}
+@media only screen and (max-width: 0px), only screen and (max-device-width: 699px)  {
+  .card .carousel-item {
+    height: 100%;
+    vertical-align: top !important;
+  }
+}
+.card .carousel-caption {
+  right: 0;
+  left: 0;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: 'Courier New';
+  vertical-align: top !important;
+}
+@media only screen and (max-width: 1001px), only screen and (max-device-width: 1100px)  {
+  .card .carousel-caption p {
+    right: 0;
+    left: 0;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Courier New';
+    vertical-align: top !important;
+    }
+}
+@media only screen and (max-width: 700px), only screen and (max-device-width: 1000px)  {
+  .card .carousel-caption p {
+    right: 0;
+    left: 0;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Courier New';
+    vertical-align: top !important;
+    }
+}
+@media only screen and (max-width: 0px), only screen and (max-device-width: 699px)  {
+  .card .carousel-caption p {
+    right: 0;
+    left: 0;
+    color: #ffffff;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    font-family: 'Courier New';
+    vertical-align: top !important;
+  }
+}
+.card .carousel-caption h3 {
+  color: #ffffff;
+  font-size: 20px;
+}
+.card .carousel-caption p {
+  line-height: 30px;
+  color: #ffffff;
+  vertical-align: top !important;
+}
+.card .carousel-caption .col-sm-4 {
+  margin: auto;
+  align-items: center;
+  vertical-align: top !important;
+}
+.card .carousel-caption .col-sm-8 {
+  text-align: left;
+  vertical-align: top !important;
+}
+.navi a {
+    text-decoration:none;
+}
+a > .ico {
+    background-color: grey;
+    padding: 10px;
+
+}
+a:hover > .ico {
+    background-color: #666;
+}
+.test {
+  height: 580px;
+  vertical-align: middle !important;
+}
+@media only screen and (max-width: 700px), only screen and (max-device-width: 1000px)  {
+  .test {
+    height: 800px;
+    vertical-align: top;
+  }
+}
+@media only screen and (max-width: 0px), only screen and (max-device-width: 699px)  {
+  .test {
+    height: 900px !important;
+    vertical-align: top;
+  }
+}
+
+/*CAROUSEL TESTIMONIOS*/
+.card-carousel{
+  width: 900px;
+  height: 400px;
+  display: block;
+  margin: auto;
+}
+
+.example-header-image{
+  background-image: url();
+}
+
+.grupofondo{
+    width: 100%;
+    height:800px;
+    background-color: (to bottom,
+    rgba(75, 47, 175, 0.884),
+    rgba(107, 61, 107, 0.596),
+    rgba(255, 233, 33, 0.45)
+    );
+    background-attachment: fixed;
+    background-position: left;
+    background-size: cover;
+
+}
+
+
+
+.intro {
+    background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.introdos {
+  background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg")no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.introtres {
+  background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg")no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.tsize {
+  font-size: 14px;
+}
+@media only screen and (max-width: 799px) {
+  .tsize {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .tsize {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .tsize2 {
+    font-size: 12px;
+  }
+}
+.mat-c{
+  border-radius: 38px 10px 10px 39px;
+  -moz-border-radius: 38px 10px 10px 39px;
+  -webkit-border-radius: 38px 10px 10px 39px;
+  border: 0px solid #000000;
+  -webkit-box-shadow: 17px 15px 19px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 17px 15px 19px -8px rgba(0,0,0,0.75);
+  box-shadow: 17px 15px 19px -8px rgba(0,0,0,0.75);
+}
+
+@media only screen and (max-width: 1024px) {
+  .mat-c {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .qimg {
+    height: 30% !important;
+    width: 30% !important;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .tsizeh4 {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .qsectionsize {
+    height: 750px;
+  }
+}
+.wow {
+  visibility: hidden;
+}
+.purple{
+  color: rgb(211, 71, 253);
+}

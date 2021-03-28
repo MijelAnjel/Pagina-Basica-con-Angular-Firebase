@@ -1,0 +1,67 @@
+<section *ngIf="posts$ | async as i" class="ftco-section ftco-degree-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 ftco-animate z-depth-1">
+
+            <mat-card class="col-md-12">
+
+            <img src="{{i.img1}}" alt="{{i.alt1}}" class="img-fluid my-2">
+
+            <h4 class="mb-3">{{i.tituloPost}}</h4>
+
+            <p>{{i.parr1}}</p>
+
+            <p>{{i.parr2}}</p>
+
+            <h4 class="mb-3 mt-5">{{i.titulo2}}</h4>
+
+            <p>{{i.parr3}}</p>
+
+            <img src="{{i.img2}}" alt="{{i.alt2}}" class="img-fluid my-4">
+            <h4 class="mb-3 mt-5 h4 h4-responsive">{{i.titulo3}}</h4>
+            <p>{{i.parr4}}</p>
+            <img src="{{i.img3}}" alt="{{i.alt3}}" class="img-fluid my-4">
+
+            <h4 class="mb-3 mt-5 h4 h4-responsive">{{i.titulo4}}</h4>
+            <p>{{i.parr5}}</p>
+
+            <img src="{{i.img4}}" alt="{{i.alt4}}" class="img-fluid my-4">
+
+
+            <h4 class="mb-3 mt-5 h4 h4-responsive">{{i.titulo5}}</h4>
+            <p>{{i.parr6}}</p>
+
+            <img src="{{i.img5}}" alt="" class="img-fluid my-4">
+
+
+            <h4 class="mb-3 mt-5 h4 h4-responsive">{{i.titulo6}}</h4>
+            <p>{{i.parr7}}</p>
+
+            <div class="about-author d-flex my-4 p-4 bg-light">
+              <div class="bio mr-5">
+                <img src="{{i.img6}}" alt="" class="img-fluid my-4">
+              </div>
+              <div class="desc">
+                <h3>{{i.autor}}</h3>
+                <p>{{i.descripcionautor}}</p>
+              </div>
+            </div>
+
+
+            <div class="pt-5 mt-5">
+
+              <!--COMENTARIOS 6-->
+
+              <div class="comment-form-wrap pt-5">
+                <!--CAJA DE COMENTARIOS 6-->
+              </div>
+            </div>
+            </mat-card>
+
+
+          </div> <!-- .col-md-8 -->
+
+
+        </div>
+      </div>
+    </section> <!-- .section -->

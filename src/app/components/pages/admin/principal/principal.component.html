@@ -1,0 +1,501 @@
+<!-- <section class="container mt-5">
+  <h5>PROPIEDADES:</h5>
+
+  <form (ngSubmit)="addProduct()">
+    <button type="submit" class="btn btn-primary"></button>
+  </form>
+
+</section> -->
+
+<article class="bg-light">
+  <section class="my-5 container z-depth-1-half ">
+    <div class="row z-depth-1">
+      <h5 class="h5 h5-responsive col-12">EDITA LAS SECCIONES DE LA PÁGINA WEB</h5>
+
+        <div *ngFor="let i of banner$ |async" class="z-depth-1 p-3 mb-5 col-sm-12">
+
+          <mat-card class="z-depth-1">
+
+          <h5>Haz clic en "Editar" y desplegar la interfaz de edición para agregar tu propio texto e imagenes.</h5>
+        </mat-card>
+        <div class="row mt-3">
+          <!-- <button class="ml-2 mr-5 mt-3" (click)="deleteProduct($event, i)"
+          class="btn btn-danger"><mat-icon>delete</mat-icon> Borrar</button> -->
+
+          <button (click)="editProduct($event, i)"
+          class="btn btn-secondary"> <mat-icon class="align-items-center justify-content-center align-content-center">assignment</mat-icon>
+            Editar
+          </button>
+        </div>
+
+
+          <div class="col-12" *ngIf="editing && editingProduct.id == i.id">
+            <form (ngSubmit)="updateProduct(product)" class="z-depth-1">
+
+              <mat-card class="col-12 my-5">
+                <h5>EDITAR IMAGENES DE BANNER:</h5>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label class="text-primary" for="inputCity">IDENTIFICADOR (NO EDITAR):</label>
+                    <input name="id" [(ngModel)]="editingProduct.id" type="text" class="form-control">
+                  </div>
+                    <div class="form-group col-md-4">
+                      <label class="text-primary" for="inputCity">imagen 1:</label>
+                      <input name="ban1" [(ngModel)]="editingProduct.ban1" type="text" class="form-control">
+                      <img class="img-fluid" src="{{editingProduct.ban1}}" alt="">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label class="text-primary" for="inputCity">imagen 2</label>
+                      <input name="ban2" [(ngModel)]="editingProduct.ban2" type="text" class="form-control">
+                      <img class="img-fluid" src="{{editingProduct.ban2}}" alt="">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label class="text-primary" for="inputCity">imagen 3</label>
+                      <input name="ban3" [(ngModel)]="editingProduct.ban3" type="text" class="form-control">
+                      <img class="img-fluid" src="{{editingProduct.ban3}}" alt="">
+                    </div>
+                  </div>
+              </mat-card>
+
+              <mat-card class="col-12 my-5">
+                <h2>EDITAR SECCIÓN 1:</h2>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label class="text-primary" for="inputCity">IDENTIFICADOR (NO EDITAR):</label>
+                    <input name="id" [(ngModel)]="editingProduct.id" type="text" class="form-control">
+                  </div>
+                    <div class="form-group col-md-4">
+                      <label class="text-primary" for="inputCity">imagen 1:</label>
+                      <input name="ban4" [(ngModel)]="editingProduct.ban4" type="text" class="form-control">
+                      <img class="img-fluid" src="{{editingProduct.ban4}}" alt="">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary"></label>
+                      <textarea [(ngModel)]="editingProduct.texto1" name="texto1" class="col-12" id="" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary"></label>
+                      <textarea [(ngModel)]="editingProduct.texto2" name="texto2" class="col-12" id="" cols="30" rows="2"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary"></label>
+                      <textarea [(ngModel)]="editingProduct.texto3" name="texto3" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary"></label>
+                      <textarea [(ngModel)]="editingProduct.texto4" name="texto4" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                  </div>
+              </mat-card>
+
+              <mat-card class="col-12 my-5">
+                <h2>EDITAR SECCIÓN 2:</h2>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label class="text-primary" for="inputCity">IDENTIFICADOR (NO EDITAR):</label>
+                    <input name="id" [(ngModel)]="editingProduct.id" type="text" class="form-control">
+                  </div>
+                    <div class="form-group col-md-4">
+                      <label class="text-primary" for="inputCity">imagen 1:</label>
+                      <input name="ban5" [(ngModel)]="editingProduct.ban5" type="text" class="form-control">
+                      <img class="img-fluid" src="{{editingProduct.ban5}}" alt="">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary"></label>
+                      <textarea [(ngModel)]="editingProduct.texto5" name="texto5" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary"></label>
+                      <textarea [(ngModel)]="editingProduct.texto6" name="texto6" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary"></label>
+                      <textarea [(ngModel)]="editingProduct.texto7" name="texto7" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary"></label>
+                      <textarea [(ngModel)]="editingProduct.texto8" name="texto8" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary"></label>
+                      <textarea [(ngModel)]="editingProduct.texto9" name="texto9" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                </div>
+              </mat-card>
+
+              <mat-card class="col-12 my-5">
+                <h2>EDITAR SECCIÓN 3:</h2>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label class="text-primary" for="inputCity">IDENTIFICADOR (NO EDITAR):</label>
+                    <input name="id" [(ngModel)]="editingProduct.id" type="text" class="form-control">
+                  </div>
+                  <h5 class="col-12">EDITAR TITULO</h5>
+                  <div class="form-group col-md-12">
+                    <label for="text-primary"></label>
+                    <textarea [(ngModel)]="editingProduct.texto10" name="texto10" class="col-12" id="" cols="30" rows="1"></textarea>
+                  </div>
+
+                  <mat-card class="col-md-3">
+                    <div class="form-group col-md-12">
+                      <label class="text-primary" for="inputCity">imagen 1:</label>
+                      <input name="ban6" [(ngModel)]="editingProduct.ban6" type="text" class="form-control">
+                      <img class="img-fluid" src="{{editingProduct.ban6}}" alt="">
+                      <div class="form-group col-md-12">
+                        <label for="text-primary"></label>
+                        <textarea [(ngModel)]="editingProduct.texto11" name="texto11" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="text-primary"></label>
+                        <textarea [(ngModel)]="editingProduct.texto12" name="texto12" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                    </div>
+                  </mat-card>
+
+                  <mat-card class="col-md-3">
+                    <div class="form-group col-md-12">
+                      <label class="text-primary" for="inputCity">imagen 2:</label>
+                      <input name="ban7" [(ngModel)]="editingProduct.ban7" type="text" class="form-control">
+                      <img class="img-fluid" src="{{editingProduct.ban7}}" alt="">
+                      <div class="form-group col-md-12">
+                        <label for="text-primary"></label>
+                        <textarea [(ngModel)]="editingProduct.texto13" name="texto13" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="text-primary"></label>
+                        <textarea [(ngModel)]="editingProduct.texto14" name="texto14" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                    </div>
+                  </mat-card>
+
+                  <mat-card class="col-md-3">
+                    <div class="form-group col-md-12">
+                      <label class="text-primary" for="inputCity">imagen 3:</label>
+                      <input name="ban8" [(ngModel)]="editingProduct.ban8" type="text" class="form-control">
+                      <img class="img-fluid" src="{{editingProduct.ban8}}" alt="">
+                      <div class="form-group col-md-12">
+                        <label for="text-primary"></label>
+                        <textarea [(ngModel)]="editingProduct.texto15" name="texto15" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="text-primary"></label>
+                        <textarea [(ngModel)]="editingProduct.texto16" name="texto16" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                    </div>
+                  </mat-card>
+
+                  <mat-card class="col-md-3">
+                    <div class="form-group col-md-12">
+                      <label class="text-primary" for="inputCity">imagen 4:</label>
+                      <input name="ban9" [(ngModel)]="editingProduct.ban9" type="text" class="form-control">
+                      <img class="img-fluid" src="{{editingProduct.ban9}}" alt="">
+                      <div class="form-group col-md-12">
+                        <label for="text-primary"></label>
+                        <textarea [(ngModel)]="editingProduct.texto17" name="texto17" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="text-primary"></label>
+                        <textarea [(ngModel)]="editingProduct.texto18" name="texto18" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                    </div>
+                  </mat-card>
+
+
+
+                </div>
+              </mat-card>
+
+              <mat-card class="col-12 my-5">
+                <h2>EDITAR SECCIÓN ACERCA DE MÍ:</h2>
+
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label class="text-primary" for="inputCity">IDENTIFICADOR (NO EDITAR):</label>
+                    <input name="id" [(ngModel)]="editingProduct.id" type="text" class="form-control">
+                  </div>
+                    <div class="form-group col-md-4">
+                      <label class="text-primary" for="inputCity">VÍDEO 1:</label>
+                      <input name="ban5" [(ngModel)]="editingProduct.ban5" type="text" class="form-control">
+                      <img class="img-fluid" src="{{editingProduct.ban5}}" alt="">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">IMAGEN BANNER</label>
+                      <input [(ngModel)]="editingProduct.texto20" name="texto20" class="col-12" id="" cols="30" rows="1">
+                      <img class="img-fluid" src="{{editingProduct.texto20}}" alt="">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TITULO BANNER</label>
+                      <textarea [(ngModel)]="editingProduct.texto25" name="texto25" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">SUBTITULO BANNER</label>
+                      <textarea [(ngModel)]="editingProduct.texto21" name="texto21" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">LINK DE VÍDEO</label>
+                      <textarea [(ngModel)]="editingProduct.texto22" name="texto22" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TITULO VÍDEO</label>
+                      <textarea [(ngModel)]="editingProduct.texto23" name="texto23" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">SUBTITULO VIDEO</label>
+                      <textarea [(ngModel)]="editingProduct.texto24" name="texto24" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+
+
+
+                </div>
+              </mat-card>
+
+              <mat-card class="col-12 my-5">
+                <h2>EDITAR SECCIÓN SERVICIOS:</h2>
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">IMAGEN BANNER</label>
+                      <input [(ngModel)]="editingProduct.texto26" name="texto26" class="col-12" id="" cols="30" rows="1">
+                      <img class="img-fluid" src="{{editingProduct.texto26}}" alt="">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TITULO BANNER</label>
+                      <textarea [(ngModel)]="editingProduct.texto27" name="texto27" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">SUBTITULO BANNER</label>
+                      <textarea [(ngModel)]="editingProduct.texto28" name="texto28" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TITULO SERVICIOS</label>
+                      <textarea [(ngModel)]="editingProduct.texto29" name="texto29" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+
+                    <mat-card class="col-4">
+                      <div class="form-group col-md-12">
+                        <label for="text-primary">CARTA 1 TITULO</label>
+                        <textarea [(ngModel)]="editingProduct.texto30" name="texto30" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="text-primary">CARTA PÁRRAFO 1</label>
+                        <textarea [(ngModel)]="editingProduct.texto31" name="texto31" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="text-primary">CARTA PÁRRAFO 2</label>
+                        <textarea [(ngModel)]="editingProduct.texto32" name="texto32" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="text-primary">IMAGEN CARTA 1</label>
+                        <input [(ngModel)]="editingProduct.texto33" name="texto33" class="col-12" id="" cols="30" rows="1">
+                        <img class="img-fluid" src="{{editingProduct.texto31}}" alt="">
+                      </div>
+                    </mat-card>
+
+                    <mat-card class="col-4">
+                      <div class="form-group col-md-12">
+                        <label for="text-primary">CARTA 2 TITULO</label>
+                        <textarea [(ngModel)]="editingProduct.texto34" name="texto34" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="text-primary">CARTA PÁRRAFO 1</label>
+                        <textarea [(ngModel)]="editingProduct.texto35" name="texto35" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="text-primary">CARTA PÁRRAFO 2</label>
+                        <textarea [(ngModel)]="editingProduct.texto36" name="texto36" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="text-primary">IMAGEN CARTA 2</label>
+                        <input [(ngModel)]="editingProduct.texto37" name="texto37" class="col-12" id="" cols="30" rows="1">
+                        <img class="img-fluid" src="{{editingProduct.texto31}}" alt="">
+                      </div>
+                    </mat-card>
+
+                    <mat-card class="col-4">
+                      <div class="form-group col-md-12">
+                        <label for="text-primary">CARTA 3 TITULO</label>
+                        <textarea [(ngModel)]="editingProduct.texto38" name="texto38" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="text-primary">CARTA PÁRRAFO 1</label>
+                        <textarea [(ngModel)]="editingProduct.texto39" name="texto39" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="text-primary">CARTA PÁRRAFO 2</label>
+                        <textarea [(ngModel)]="editingProduct.texto40" name="texto40" class="col-12" id="" cols="30" rows="1"></textarea>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="text-primary">IMAGEN CARTA 3</label>
+                        <input [(ngModel)]="editingProduct.texto41" name="texto41" class="col-12" id="" cols="30" rows="1">
+                        <img class="img-fluid" src="{{editingProduct.texto31}}" alt="">
+                      </div>
+                    </mat-card>
+
+
+                </div>
+              </mat-card>
+
+              <mat-card class="col-12 my-5">
+
+                <div class="form-row">
+                  <mat-card class="col-md-4">
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TITULO</label>
+                      <textarea [(ngModel)]="editingProduct.texto42" name="texto42" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">ÍCONO</label>
+                      <img class="img-fluid" src="{{editingProduct.texto43}}" alt="">
+                      <textarea [(ngModel)]="editingProduct.texto43" name="texto43" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TEXTO ÍCONO</label>
+                      <textarea [(ngModel)]="editingProduct.texto44" name="texto44" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                  </mat-card>
+
+                  <mat-card class="col-md-4">
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">ÍCONO</label>
+                      <img class="img-fluid" src="{{editingProduct.texto45}}" alt="">
+                      <textarea [(ngModel)]="editingProduct.texto45" name="texto46" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TEXTO ÍCONO</label>
+                      <input [(ngModel)]="editingProduct.texto46" name="texto46" class="col-12" id="" cols="30" rows="1">
+                    </div>
+                  </mat-card>
+
+                  <mat-card class="col-md-4">
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">ÍCONO</label>
+                      <img class="img-fluid" src="{{editingProduct.texto47}}" alt="">
+                      <textarea [(ngModel)]="editingProduct.texto47" name="texto47" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TEXTO ÍCONO</label>
+                      <input [(ngModel)]="editingProduct.texto48" name="texto48" class="col-12" id="" cols="30" rows="1">
+                    </div>
+                  </mat-card>
+
+                  <mat-card class="col-md-4">
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">ÍCONO</label>
+                      <img class="img-fluid" src="{{editingProduct.texto49}}" alt="">
+                      <textarea [(ngModel)]="editingProduct.texto49" name="texto49" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TEXTO ÍCONO</label>
+                      <textarea [(ngModel)]="editingProduct.texto50" name="texto50" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                  </mat-card>
+
+                  <mat-card class="col-md-4">
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">ÍCONO</label>
+                      <img class="img-fluid" src="{{editingProduct.texto51}}" alt="">
+                      <textarea [(ngModel)]="editingProduct.texto51" name="texto51" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TEXTO ÍCONO</label>
+                      <input [(ngModel)]="editingProduct.texto52" name="texto52" class="col-12" id="" cols="30" rows="1">
+                    </div>
+                  </mat-card>
+
+                  <mat-card class="col-md-4">
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">ÍCONO</label>
+                      <img class="img-fluid" src="{{editingProduct.texto53}}" alt="">
+                      <textarea [(ngModel)]="editingProduct.texto53" name="texto53" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TEXTO ÍCONO</label>
+                      <input [(ngModel)]="editingProduct.texto54" name="texto54" class="col-12" id="" cols="30" rows="1">
+                    </div>
+                  </mat-card>
+
+                </div>
+
+              </mat-card>
+
+              <mat-card class="col-12 my-5">
+                <h2>EDITAR SECCIÓN CONTACTO:</h2>
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">IMAGEN BANNER</label>
+                      <input [(ngModel)]="editingProduct.texto55" name="texto55" class="col-12" id="" cols="30" rows="1">
+                      <img class="img-fluid" src="{{editingProduct.texto55}}" alt="">
+                    </div>
+
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TITULO BANNER</label>
+                      <textarea [(ngModel)]="editingProduct.texto63" name="texto63" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">SUBTITULO BANNER</label>
+                      <textarea [(ngModel)]="editingProduct.texto64" name="texto64" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TITULO CONTACTO</label>
+                      <textarea [(ngModel)]="editingProduct.texto56" name="texto56" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">SUBTITULO CONTACTO</label>
+                      <textarea [(ngModel)]="editingProduct.texto57" name="texto57" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TITULO IZQUIERDO</label>
+                      <textarea [(ngModel)]="editingProduct.texto58" name="texto58" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">PÁRRAFO</label>
+                      <textarea [(ngModel)]="editingProduct.texto59" name="texto59" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TITULO DATO1</label>
+                      <textarea [(ngModel)]="editingProduct.texto60" name="texto60" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">DATO1</label>
+                      <textarea [(ngModel)]="editingProduct.texto61" name="texto61" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TITULO DATO2</label>
+                      <input [(ngModel)]="editingProduct.texto62" name="texto62" class="col-12" id="" cols="30" rows="1">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">DATO2</label>
+                      <input [(ngModel)]="editingProduct.texto65" name="texto65" class="col-12" id="" cols="30" rows="1">
+                    </div>
+
+                </div>
+              </mat-card>
+
+              <mat-card class="col-12 my-5"></mat-card>
+
+
+
+
+
+
+              <button class="btn btn-outline-info my-5" type="submit">Actualizar datos</button>
+            </form>
+
+          </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+</article>
