@@ -1,7 +1,7 @@
     <!--NGB CAROUSEL 1-->
     <ngb-carousel *ngFor="let i of inicio$ |async" class="text-center">
       <ng-template ngbSlide>
-          <img class="imgr" data-wow-delay="0.1s" src="{{i.ban1}}" alt="servicios de coaching chile en star coaching">
+          <img class="imgr" data-wow-delay="0.1s" src="{{i.ban1}}" alt="servicios de coaching chile star coaching">
       </ng-template>
       <ng-template ngbSlide>
         <img class="imgr" src="{{i.ban2}}" alt="coaching chile">
@@ -11,6 +11,7 @@
       </ng-template>
     </ngb-carousel>
 
+
     <section>
       <div *ngFor="let i of inicio$ |async" class="container z-depth-1 my-5">
         <section class="mx-md-5 text-center text-lg-left">
@@ -18,8 +19,8 @@
             <div class="col-md-12">
               <div class="row justify-content-center ">
                 <div class="col-md-7 heading-section text-center ftco-animate mt-4">
-                  <h2 class="purple">{{i.texto}}</h2>
-                  <hr class="purple" style="border: 1px solid rgb(163, 2, 163);">
+                  <h2 class="{{i.texto89}}">{{i.texto}}</h2>
+                  <hr class="{{i.texto89}}" style="border: 1px solid rgb(163, 2, 163);">
                   <span class="subheading"></span>
                 </div>
               </div>
@@ -30,7 +31,7 @@
                     {{i.texto2}}
                   </p>
                   <div>
-                    <p class="font-weight-bold purple m-0 lead"><strong>{{i.texto3}}</strong></p>
+                    <p class="font-weight-bold {{i.texto89}} m-0 lead"><strong>{{i.texto3}}</strong></p>
                     <p class="font-weight-bold h5 h5-responsive text-muted purple">{{i.texto4}}</p>
                   </div>
                 </div>
@@ -53,17 +54,19 @@
 
 
         <!--Section: Content-->
-        <section  class="text-center text-lg-left dark-grey-text">
+        <section  class="text-center text-lg-left ">
           <!--Grid row-->
           <div class="row">
             <!--Grid column-->
-            <div class="col-md-6 sec">
-              <h3 class="font-weight-bold">{{i.texto5}} </h3>
+            <div class="col-md-6 ">
+              <h3 class="{{i.ts2}} font-weight-bold">{{i.texto5}} </h3>
               <p class="mb-1 tsize">{{i.texto6}} <br> {{i.texto7}}
               </p>
                 <p class="mb-1">{{i.texto8}}  </p>
                 <p class="mb-1 mb-4">{{i.texto9}} </p>
-                  <a class="btn btn-primary my-4" routerLink="/contacto">¡ Saber Más !</a>
+
+                  <a style="border: 1px solid #3b3b3cb0;" type="button" class="btn btn-outline-light {{i.ts2}} my-4" routerLink="/contacto">¡ Saber Más !</a>
+
             </div>
             <!--Grid column-->
             <!--Grid column-->
@@ -249,7 +252,7 @@
 
             <div class="row justify-content-center pb-5 mb-3">
               <div class="col-md-7 heading-section text-center ftco-animate">
-                <h2>{{i.texto10}}</h2>
+                <h2 class="{{i.ts3}}">{{i.texto10}}</h2>
               </div>
             </div>
             <div  class="row">
@@ -321,7 +324,7 @@
 
 
                   <div class="col-sm-6 text-center mx-auto">
-                    <a class="btn btn-primary mb-4 mt-4"[href]="['/servicios']">CONOCE MÁS ACERCA DE NUESTROS SERVICIOS</a>
+                    <a style="border: 1px solid #3b3b3cb0;" type="button" class="btn btn-outline-light {{i.ts3}} my-4" [href]="['/servicios']">CONOCE MÁS ACERCA DE NUESTROS SERVICIOS</a>
                   </div>
 
 
@@ -652,7 +655,6 @@
     </section> -->
     <!--SECCION PLANES -->
 
-
     <!--SECCION BLOG -->
     <section class="ftco-section" >
       <div class="container mt-2">
@@ -662,7 +664,7 @@
         <section class="dark-grey-text text-center">
 
           <!-- Section heading -->
-          <h2 class="font-weight-bold mb-4 pb-2">Entradas del Blog</h2>
+
           <!-- Section description -->
           <!-- <p class="text-center mx-auto w-responsive mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur veniam.</p> -->
 
@@ -672,26 +674,32 @@
             <!-- Grid column -->
             <div *ngFor="let i of posts$ | async |slice:0:3; " class="col-lg-4 col-md-12 mb-4">
 
-              <!-- Featured image -->
-              <div class="view overlay rounded z-depth-2 ">
-                <img style="border-radius: 5px;" class="img-fluid" src="{{i.img1}}" alt="{{i.alt1}}">
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
+              <mat-card>
 
-              <!-- Category -->
-              <a href="#!" class="pink-text">
-                <h6 class="font-weight-bold"><i class="fas fa-map pr-2"></i>{{i.tema}}</h6>
-              </a>
-              <!-- Post title -->
-              <h4 class="font-weight-bold mb-3"><strong>{{i.tituloPost}}</strong></h4>
-              <!-- Post data -->
-              <p>Por: <a class="font-weight-bold">{{i.autor}}</a>, {{i.fecha}}</p>
-              <!-- Excerpt -->
-              <p class="dark-grey-text">{{i.descripcionbreve}}.</p>
-              <!-- Read more button -->
-              <a [routerLink]="['/single-blog', i?.id]" class="btn btn-outline-info  ">Leer Más... </a>
+                <h4 class="font-weight-bold mb-4 pb-2">Entradas del Blog</h4>
+
+                <!-- Featured image -->
+                <div class="view overlay rounded z-depth-2 ">
+                  <img style="border-radius: 5px;" class="img-fluid" src="{{i.img1}}" alt="{{i.alt1}}">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+                </div>
+
+                <!-- Category -->
+                <a href="#!" class="pink-text">
+                  <h6 class="font-weight-bold"><i class="fas fa-map pr-2"></i>{{i.tema}}</h6>
+                </a>
+                <!-- Post title -->
+                <h4 class="font-weight-bold mb-3"><strong>{{i.tituloPost}}</strong></h4>
+                <!-- Post data -->
+                <p>Por: <a class="font-weight-bold">{{i.autor}}</a>, {{i.fecha}}</p>
+                <!-- Excerpt -->
+                <p class="dark-grey-text">{{i.descripcionbreve}}.</p>
+                <!-- Read more button -->
+                <a [routerLink]="['/single-blog', i?.id]" class="btn btn-outline-info  ">Leer Más... </a>
+
+              </mat-card>
 
             </div>
             <!-- Grid column -->

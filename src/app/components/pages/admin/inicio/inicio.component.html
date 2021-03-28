@@ -341,6 +341,62 @@
 </mat-card>
   </div>
 
+  <div *ngFor="let i of blog$ |async | slice:5:6;" class="z-depth-1 p-3 mb-5 col-sm-4 text-center">
+
+    <mat-card class="">
+    <label><li><h5>Imagen 6:</h5> <img src="{{i.timg5}}" class="img-fluid" alt=""></li></label>
+
+
+  <div class="row mt-3">
+    <!-- <button class="ml-2 mr-5 mt-3" (click)="deleteProduct($event, i)"
+    class="btn btn-danger"><mat-icon>delete</mat-icon> Borrar</button> -->
+
+    <button (click)="editProduct($event, i)"
+    class="btn btn-secondary ml-4">
+      Editar
+    </button>
+  </div>
+
+
+    <div class="col-12" *ngIf="editing && editingProduct.id == i.id">
+      <form (ngSubmit)="updateProduct(product)" class="z-depth-1">
+
+        <h2>EDITAR IMAGEN:</h2>
+
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label class="text-primary" for="inputCity">Título:</label>
+            <input name="texto1" [(ngModel)]="editingProduct.texto1" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-12">
+            <label class="text-primary col-12" for="inputCity">Subtitulo</label>
+            <input class="col-12" name="texto2" [(ngModel)]="editingProduct.texto2" type="text" cols="30" rows="10">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label class="text-primary" for="inputCity">Nombre:</label>
+            <input name="tname1" [(ngModel)]="editingProduct.tname1" type="text" class="form-control">
+          </div>
+          <div class="form-group col-md-12">
+            <label class="text-primary col-12" for="inputCity">IDENTIFICADOR</label>
+            <textarea class="col-12" name="testi1" [(ngModel)]="editingProduct.testi1" type="text" cols="30" rows="10"></textarea>
+          </div>
+            <div class="form-group col-md-12">
+              <label class="text-primary" for="inputCity">imagen 5</label>
+              <input name="timg5" [(ngModel)]="editingProduct.timg5" type="text" class="form-control">
+            </div>
+        </div>
+
+
+        <button class="btn btn-outline-info" type="submit">Actualizar datos</button>
+      </form>
+    </div>
+
+</mat-card>
+  </div>
+
 
   </div>
 

@@ -1,4 +1,4 @@
-
+<!--
     <footer class="footer">
 			<div class="container-fluid px-lg-5">
 				<div class="row">
@@ -39,33 +39,113 @@
 						</div>
 						<div class="row mt-md-5">
 							<div class="col-md-12">
-								<p class="copyright text-white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								<p class="copyright text-white">
 					  Copyright | Esta página está hecha <i class="fa fa-heart" aria-hidden="true"></i> por <a class="purple" href="https://tripy.xyz" target="_blank">tripy.xyz</a>
-					  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+</p>
 							</div>
 						</div>
 					</div>
-					<!-- <div class="col-md-3 py-md-5 py-4 aside-stretch-right pl-lg-5">
-						<h2 class="footer-heading">Conversemos: Primera Consulta Gratis</h2>
-						<form action="#" class="form-consultation">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Tu Nombre">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Tu Correo">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Asunto">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Mensaje"></textarea>
-              </div>
-              <div class="form-group">
-              	<button type="submit" class="form-control submit px-3">Enviar Mensaje</button>
-              </div>
-            </form>
-					</div> -->
+
 				</div>
 			</div>
-	</footer>
+	</footer> -->
 
+
+  <div class="">
+
+      <!-- Section: Introduction -->
+  <!-- <section class="">
+
+
+    <p>STAR COACHING</p>
+
+    <a class="btn btn-primary me-2" [routerLink]="[('/inicio')]" target="_blank" role="button">INICIO<i class="fas fa-download ms-2"></i></a>
+    <a class="btn btn-danger me-2" [routerLink]="[('/acerca-de-mi')]" role="button">ACERCA DE MÍ</a>
+    <a class="btn btn-success me-2" [routerLink]="[('/servicios')]" role="button">SERVICIOS</a>
+    <a class="btn btn-dark me-2" [routerLink]="[('/contacto')]" role="button">CONTACTO<i class="fab fa-github ms-2"></i></a>
+
+  </section> -->
+
+
+    <section class="">
+
+      <hr>
+
+      <footer class="bg-light text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Social media -->
+          <section *ngFor="let i of inicio$ |async" class="mb-4">
+            <!-- Facebook -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #3b5998;"
+               target="_blank"
+               href="{{i.texto80}}"
+               role="button"
+               ><i class="fab fa-facebook-f"></i
+              ></a>
+
+            <!-- Twitter -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #55acee;"
+               target="_blank"
+               href="{{i.texto81}}"
+               role="button"
+               ><i class="fab fa-twitter"></i
+              ></a>
+
+            <!-- Google
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #dd4b39;"
+               href="#!"
+               role="button"
+               ><i class="fab fa-google"></i
+              ></a>-->
+
+            <!-- Instagram -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #ac2bac;"
+               target="_blank"
+               href="{{i.texto82}}"
+               role="button"
+               ><i class="fab fa-instagram"></i
+              ></a>
+
+            <!-- Linkedin -->
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #0082ca;"
+               target="_blank"
+               href="{{i.texto83}}"
+               role="button"
+               ><i class="fab fa-linkedin-in"></i
+              ></a>
+            <!-- Github
+            <a
+               class="btn btn-primary btn-floating m-1"
+               style="background-color: #333333;"
+               href="#!"
+               role="button"
+               ><i class="fab fa-github"></i
+              ></a> -->
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2021 Copyright:
+          <a class="text-dark" href="https://AAAAAAAAAAAAA.com/">Miguel Figueroa</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+
+
+    </section>
+    <!-- Section: Basic example -->
+  </div>
