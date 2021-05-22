@@ -148,6 +148,15 @@ export interface BlogI {
   texto88?: string;
   texto89?: string;
 
+  texto90?: string;
+  texto91?: string;
+  texto92?: string;
+  texto93?: string;
+  texto94?: string;
+  texto95?: string;
+  texto96?: string;
+  texto97?: string;
+
   ts2?: string;
   ts3?: string;
   ts4?: string;

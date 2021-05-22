@@ -67,7 +67,7 @@
   </section> -->
 
 
-    <section class="">
+    <section *ngFor="let i of inicio$ |async" class="">
 
       <hr>
 
@@ -78,23 +78,23 @@
           <section *ngFor="let i of inicio$ |async" class="mb-4">
             <!-- Facebook -->
             <a
-               class="btn btn-primary btn-floating m-1"
-               style="background-color: #3b5998;"
+               class="btn btn-floating m-1"
                target="_blank"
                href="{{i.texto80}}"
                role="button"
-               ><i class="fab fa-facebook-f"></i
-              ></a>
+               >
+               <!-- <i class="fab fa-facebook-f"></i> -->
+               <img src="{{i.texto84}}" style="max-width: 65px; height: auto;" class="btn-floating avatar img-fluid" alt=""> </a>
 
             <!-- Twitter -->
             <a
-               class="btn btn-primary btn-floating m-1"
-               style="background-color: #55acee;"
+               class="btn btn-floating img-thumbnail m-1"
                target="_blank"
                href="{{i.texto81}}"
                role="button"
-               ><i class="fab fa-twitter"></i
-              ></a>
+               >
+               <!-- <i class="fab fa-facebook-f"></i> -->
+               <img src="{{i.texto85}}" style="max-width: 65px; height: auto;" class="btn-floating avatar img-fluid" alt=""> </a>
 
             <!-- Google
             <a
@@ -107,23 +107,23 @@
 
             <!-- Instagram -->
             <a
-               class="btn btn-primary btn-floating m-1"
-               style="background-color: #ac2bac;"
+               class="btn btn-floating m-1 img-thumbnail"
                target="_blank"
                href="{{i.texto82}}"
                role="button"
-               ><i class="fab fa-instagram"></i
-              ></a>
+               >
+               <!-- <i class="fab fa-facebook-f"></i> -->
+               <img src="{{i.texto86}}" style="max-width: 65px; height: auto;" class="btn-floating avatar img-fluid" alt=""> </a>
 
             <!-- Linkedin -->
             <a
-               class="btn btn-primary btn-floating m-1"
-               style="background-color: #0082ca;"
+               class="btn btn-floating m-1 img-thumbnail"
                target="_blank"
                href="{{i.texto83}}"
                role="button"
-               ><i class="fab fa-linkedin-in"></i
-              ></a>
+               >
+               <!-- <i class="fab fa-facebook-f"></i> -->
+               <img src="{{i.texto87}}" style="max-width: 65px; height: auto;" class="btn-floating avatar img-fluid" alt=""> </a>
             <!-- Github
             <a
                class="btn btn-primary btn-floating m-1"

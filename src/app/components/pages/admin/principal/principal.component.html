@@ -64,7 +64,7 @@
                     <label class="text-primary" for="inputCity">IDENTIFICADOR (NO EDITAR):</label>
                     <input name="id" [(ngModel)]="editingProduct.id" type="text" class="form-control">
                   </div>
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-4">
                       <label class="text-primary" for="inputCity">imagen 1:</label>
                       <input name="ban4" [(ngModel)]="editingProduct.ban4" type="text" class="form-control">
                       <img class="img-fluid" src="{{editingProduct.ban4}}" alt="">
@@ -525,20 +525,54 @@
                     </div>
 
                     <div class="form-group col-md-12">
-                      <label for="text-primary">TITULO BANNER</label>
+                      <label for="text-primary">UBICACIÓN titulo</label>
+                      <input [(ngModel)]="editingProduct.texto62" name="texto62" class="col-12" id="" cols="30" rows="1">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">UBICACIÓN FOTO</label>
+                      <img src="{{editingProduct.texto66}}" alt="">
+                      <input [(ngModel)]="editingProduct.texto66" name="texto66" class="col-12" id="" cols="30" rows="1">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">UBICACIÓN direccion</label>
+                      <input [(ngModel)]="editingProduct.texto67" name="texto67" class="col-12" id="" cols="30" rows="1">
+                    </div>
+
+
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">IMAGEN CORREO</label>
+                      <img src="{{editingProduct.texto63}}" alt="">
                       <textarea [(ngModel)]="editingProduct.texto63" name="texto63" class="col-12" id="" cols="30" rows="1"></textarea>
                     </div>
                     <div class="form-group col-md-12">
-                      <label for="text-primary">SUBTITULO BANNER</label>
+                      <label for="text-primary">CORREO </label>
                       <textarea [(ngModel)]="editingProduct.texto64" name="texto64" class="col-12" id="" cols="30" rows="1"></textarea>
                     </div>
 
                     <div class="form-group col-md-12">
-                      <label for="text-primary">TITULO CONTACTO</label>
+                      <label for="text-primary">IMAGEN FONO</label>
+                      <img src="{{editingProduct.texto65}}" alt="">
+                      <textarea [(ngModel)]="editingProduct.texto65" name="texto65" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+
+
+
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TITULO FONO</label>
+                      <textarea [(ngModel)]="editingProduct.texto60" name="texto60" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">FONO</label>
+                      <textarea [(ngModel)]="editingProduct.texto61" name="texto61" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+
+
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">TITULO</label>
                       <textarea [(ngModel)]="editingProduct.texto56" name="texto56" class="col-12" id="" cols="30" rows="1"></textarea>
                     </div>
                     <div class="form-group col-md-12">
-                      <label for="text-primary">SUBTITULO CONTACTO</label>
+                      <label for="text-primary">SUBTITULO</label>
                       <textarea [(ngModel)]="editingProduct.texto57" name="texto57" class="col-12" id="" cols="30" rows="1"></textarea>
                     </div>
 
@@ -551,22 +585,8 @@
                       <label for="text-primary">PÁRRAFO</label>
                       <textarea [(ngModel)]="editingProduct.texto59" name="texto59" class="col-12" id="" cols="30" rows="1"></textarea>
                     </div>
-                    <div class="form-group col-md-12">
-                      <label for="text-primary">TITULO DATO1</label>
-                      <textarea [(ngModel)]="editingProduct.texto60" name="texto60" class="col-12" id="" cols="30" rows="1"></textarea>
-                    </div>
-                    <div class="form-group col-md-12">
-                      <label for="text-primary">DATO1</label>
-                      <textarea [(ngModel)]="editingProduct.texto61" name="texto61" class="col-12" id="" cols="30" rows="1"></textarea>
-                    </div>
-                    <div class="form-group col-md-12">
-                      <label for="text-primary">TITULO DATO2</label>
-                      <input [(ngModel)]="editingProduct.texto62" name="texto62" class="col-12" id="" cols="30" rows="1">
-                    </div>
-                    <div class="form-group col-md-12">
-                      <label for="text-primary">DATO2</label>
-                      <input [(ngModel)]="editingProduct.texto65" name="texto65" class="col-12" id="" cols="30" rows="1">
-                    </div>
+
+
 
                 </div>
               </mat-card>
@@ -582,20 +602,45 @@
 
 
                     <div class="form-group col-md-12">
-                      <label for="text-primary">FACEBOOK</label>
-                      <textarea [(ngModel)]="editingProduct.texto80" name="texto8" class="col-12" id="" cols="30" rows="1"></textarea>
+                      <label for="text-primary">IMAGEN RED SOCIAL 1</label>
+                      <input [(ngModel)]="editingProduct.texto84" name="texto84" class="col-12" id="" cols="30" rows="1">
+                      <img style="max-width: 65px; height: auto;" class="img-fluid" src="{{editingProduct.texto84}}" alt="">
                     </div>
                     <div class="form-group col-md-12">
-                      <label for="text-primary">TWITTER</label>
+                      <label for="text-primary">DIRECCIÓN WEB RED SOCIAL 1</label>
+                      <textarea [(ngModel)]="editingProduct.texto80" name="texto8" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+
+
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">IMAGEN RED SOCIAL 2</label>
+                      <input [(ngModel)]="editingProduct.texto85" name="texto85" class="col-12" id="" cols="30" rows="1">
+                      <img style="max-width: 65px; height: auto;" class="img-fluid" src="{{editingProduct.texto85}}" alt="">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">DIRECCIÓN WEB RED SOCIAL 2</label>
                       <textarea [(ngModel)]="editingProduct.texto81" name="texto81" class="col-12" id="" cols="30" rows="1"></textarea>
                     </div>
 
+
                     <div class="form-group col-md-12">
-                      <label for="text-primary">INSTAGRAM</label>
-                      <textarea [(ngModel)]="editingProduct.texto82" name="texto82" class="col-12" id="" cols="30" rows="1"></textarea>
+                      <label for="text-primary">IMAGEN RED SOCIAL 3</label>
+                      <input [(ngModel)]="editingProduct.texto86" name="texto86" class="col-12" id="" cols="30" rows="1">
+                      <img style="max-width: 65px; height: auto;" class="img-fluid" src="{{editingProduct.texto86}}" alt="">
                     </div>
                     <div class="form-group col-md-12">
-                      <label for="text-primary">LINKEDIN</label>
+                      <label for="text-primary">DIRECCIÓN WEB RED SOCIAL 3</label>
+                      <textarea [(ngModel)]="editingProduct.texto82" name="texto82" class="col-12" id="" cols="30" rows="1"></textarea>
+                    </div>
+
+
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">IMAGEN RED SOCIAL 4</label>
+                      <input [(ngModel)]="editingProduct.texto87" name="texto87" class="col-12" id="" cols="30" rows="1">
+                      <img style="max-width: 65px; height: auto;" class="img-fluid" src="{{editingProduct.texto87}}" alt="">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="text-primary">DIRECCIÓN WEB RED SOCIAL 4</label>
                       <textarea [(ngModel)]="editingProduct.texto83" name="texto83" class="col-12" id="" cols="30" rows="1"></textarea>
                     </div>
 
